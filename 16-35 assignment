@@ -331,41 +331,39 @@ Q27.
 #include <cmath>
 using namespace std;
 
-bool isArmstrong(int num) {
-    int sum = 0, temp = num, digits = 0;
-
-    while (temp != 0) {
-        digits++;
-        temp /= 10;
-    }
-
-    temp = num;
-    while (temp != 0) {
-        int digit = temp % 10;
-        sum += pow(digit, digits);
-        temp /= 10;
-    }
-
-    return (sum == num);
-}
-
-int main() {
-    int start, end;
-
-    cout << "Enter the range (start and end): ";
-    cin >> start >> end;
+int main() 
+{
+    int start,end;
+    cout <<"Enter the range (start and end): ";
+    cin >>start>>end;
 
     cout << "Armstrong numbers between " << start << " and " << end << " are:\n";
-    
-    for (int i = start; i <= end; i++) {
-        if (isArmstrong(i)) {
-            cout << i << " ";
+
+    for (int num = start; num <= end; num++) {
+        int sum = 0, a = num, digits = 0;
+
+        int temp = num;
+        while (temp != 0) {
+            digits++;
+            temp /= 10;
+        }
+
+        a = num;
+        while (a != 0) {
+            int digit = a % 10;
+            sum += pow(digit, digits);
+            a /= 10;
+        }
+
+        if (sum == num) {
+            cout << num << " ";
         }
     }
-
+    
     cout << endl;
     return 0;
 }
+
 Q28.
 #include <iostream>
 #include <cstdlib>
