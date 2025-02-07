@@ -239,7 +239,7 @@ int main()
     cout<<"Enter a value: ";
     cin>>n;
 
-    int temp=n; 
+    int a=n; 
     
     if (n<0) 
 	{
@@ -255,7 +255,7 @@ int main()
     } 
 	while (n>1);
 
-        cout<<"Factorial of "<<temp<<" is: "<<f;
+        cout<<"Factorial of "<<a<<" is: "<<f;
     }
     return 0;
 }
@@ -301,9 +301,11 @@ Q26.
 using namespace std;
 
 bool isPrime(int num) {
-    if (num <= 1) return false;
-    for (int i = 2; i * i <= num; i++) {
-        if (num % i == 0) return false;
+    if (num<=1) 
+    return false;
+    for (int i=2;i*i<=num;i++) {
+        if (num%i==0) 
+    return false;
     }
     return true;
 }
