@@ -1,0 +1,602 @@
+//Q1
+#include <iostream>
+using namespace std;
+
+int maxNumber(int a, int b) {
+    return (a > b) ? a : b;
+}
+
+int main() {
+    int a, b;
+    cout << "Enter two numbers: ";
+    cin >> a >> b;
+    cout << "The larger number is: " << maxNumber(a, b) << endl;
+    return 0;
+}
+
+//Q2
+#include <iostream>
+using namespace std;
+
+int factorial(int n) {
+    int res = 1;
+    for (int i = 2; i <= n; i++) {
+        res *= i;
+    }
+    return res;
+}
+
+int main() {
+    int n;
+    cout << "Enter a number to calculate its factorial: ";
+    cin >> n;
+    cout << "Factorial of " << n << " is: " << factorial(n) << endl;
+    return 0;
+}
+
+//Q3
+#include <iostream>
+using namespace std;
+
+int reverseNumber(int n) {
+    int rev = 0;
+    while (n > 0) {
+        rev = rev * 10 + n % 10;
+        n /= 10;
+    }
+    return rev;
+}
+
+int main() {
+    int n;
+    cout << "Enter a number to reverse: ";
+    cin >> n;
+    cout << "Reversed number is: " << reverseNumber(n) << endl;
+    return 0;
+}
+
+//Q4
+#include <iostream>
+using namespace std;
+
+int sumOfDigits(int n) {
+    int sum = 0;
+    while (n > 0) {
+        sum += n % 10;
+        n /= 10;
+    }
+    return sum;
+}
+
+int main() {
+    int n;
+    cout << "Enter a number to calculate the sum of its digits: ";
+    cin >> n;
+    cout << "Sum of digits is: " << sumOfDigits(n) << endl;
+    return 0;
+}
+
+//Q5
+#include <iostream>
+using namespace std;
+
+int reverseNumber(int n) {
+    int rev = 0;
+    while (n > 0) {
+        rev = rev * 10 + n % 10;
+        n /= 10;
+    }
+    return rev;
+}
+
+bool isPalindrome(int n) {
+    return n == reverseNumber(n);
+}
+
+int main() {
+    int n;
+    cout << "Enter a number to check if it's a palindrome: ";
+    cin >> n;
+    if (isPalindrome(n)) {
+        cout << n << " is a palindrome." << endl;
+    } else {
+        cout << n << " is not a palindrome." << endl;
+    }
+    return 0;
+}
+
+//Q6
+#include <iostream>
+using namespace std;
+
+int fibonacci(int n) {
+    if (n <= 1) return n;
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+int main() {
+    int n;
+    cout << "Enter the position to find the Fibonacci number: ";
+    cin >> n;
+    cout << "Fibonacci number at position " << n << " is: " << fibonacci(n) << endl;
+    return 0;
+}
+
+//Q7
+#include <iostream>
+using namespace std;
+
+int gcd(int a, int b) {
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+
+int main() {
+    int a, b;
+    cout << "Enter two numbers to find their GCD: ";
+    cin >> a >> b;
+    cout << "GCD of " << a << " and " << b << " is: " << gcd(a, b) << endl;
+    return 0;
+}
+
+//Q8
+#include <iostream>
+using namespace std;
+
+void print(string s) {
+    cout << s << endl;
+}
+
+void print(int n) {
+    cout << n << endl;
+}
+
+void print(string s, int n) {
+    cout << s << " " << n << endl;
+}
+
+int main() {
+    print("Hello");
+    print(123);
+    print("Age", 19);
+    return 0;
+}
+
+//Q9
+#include <iostream>
+using namespace std;
+
+class Calculator {
+public:
+    int sum(int a, int b) {
+        return a + b;
+    }
+
+    double sum(double a, double b, double c) {
+        return a + b + c;
+    }
+
+    float sum(int a, float b) {
+        return a + b;
+    }
+};
+
+int main() {
+    Calculator calc;
+    cout << calc.sum(3, 5) << endl;
+    cout << calc.sum(1.5, 2.5, 3.0) << endl;
+    cout << calc.sum(4, 2.5f) << endl;
+    return 0;
+}
+
+//Q10
+#include <iostream>
+using namespace std;
+
+int multiply(int a, int b) {
+    return a * b;
+}
+
+double multiply(int a, double b) {
+    return a * b;
+}
+
+float multiply(float a, float b, float c) {
+    return a * b * c;
+}
+
+int main() {
+    cout << multiply(2, 3) << endl;
+    cout << multiply(2, 3.5) << endl;
+    cout << multiply(1.5f, 2.5f, 3.5f) << endl;
+    return 0;
+}
+
+//Q11
+#include <iostream>
+using namespace std;
+
+void greet() {
+    cout << "Hello!" << endl;
+}
+
+void greet(string name) {
+    cout << "Hello, " << name << "!" << endl;
+}
+
+void greet(string name, int age) {
+    cout << "Hello, " << name << "! You are " << age << " years old." << endl;
+}
+
+int main() {
+    greet();
+    greet("Shubh");
+    greet("Shubh", 19);
+    return 0;
+}
+
+//Q12
+#include <iostream>
+using namespace std;
+
+int area(int side) {
+    return side * side;
+}
+
+int area(int length, int breadth) {
+    return length * breadth;
+}
+
+double area(double radius) {
+    return 3.14 * radius * radius;
+}
+
+int main() {
+    cout << area(4) << endl;
+    cout << area(4, 5) << endl;
+    cout << area(3.5) << endl;
+    return 0;
+}
+
+//Q13
+#include <iostream>
+#include <string>
+using namespace std;
+
+string concat(string a, string b) {
+    return a + b;
+}
+
+string concat(int a, string b) {
+    return to_string(a) + b;
+}
+
+int main() {
+    cout << concat("Hello, ", "World!") << endl;
+    cout << concat(123, " is a number") << endl;
+    return 0;
+}
+
+//Q14
+#include <iostream>
+using namespace std;
+
+int power(int base, int exp) {
+    int result = 1;
+    for (int i = 0; i < exp; i++) {
+        result *= base;
+    }
+    return result;
+}
+
+double power(double base, int exp) {
+    double result = 1.0;
+    for (int i = 0; i < exp; i++) {
+        result *= base;
+    }
+    return result;
+}
+
+int main() {
+    cout << power(2, 3) << endl;
+    cout << power(2.5, 3) << endl;
+    return 0;
+}
+
+//Q15
+#include <iostream>
+#include <cstdarg>
+using namespace std;
+
+int sum(int count, ...) {
+    int total = 0;
+    va_list args;
+    va_start(args, count);
+    for (int i = 0; i < count; i++) {
+        total += va_arg(args, int);
+    }
+    va_end(args);
+    return total;
+}
+
+int main() {
+    cout << sum(4, 1, 2, 3, 4) << endl;
+    return 0;
+}
+
+//Q16
+#include <iostream>
+#include <cstdarg>
+using namespace std;
+
+int findLargest(int count, ...) {
+    va_list args;
+    va_start(args, count);
+    int max = va_arg(args, int);
+    for (int i = 1; i < count; i++) {
+        int num = va_arg(args, int);
+        if (num > max) {
+            max = num;
+        }
+    }
+    va_end(args);
+    return max;
+}
+
+int main() {
+    cout << findLargest(4, 1, 5, 3, 2) << endl;
+    return 0;
+}
+
+//Q17
+#include <iostream>
+#include <cstdarg>
+using namespace std;
+
+void concatStrings(int count, ...) {
+    va_list args;
+    va_start(args, count);
+    string result = "";
+    for (int i = 0; i < count; i++) {
+        result += va_arg(args, char*);
+    }
+    va_end(args);
+    cout << result << endl;
+}
+
+int main() {
+    concatStrings(3, "Hello, ", "Shubh", "!");
+    return 0;
+}
+
+//Q18
+#include <iostream>
+using namespace std;
+
+int gcd(int a, int b) {
+    if (b == 0) return a;
+    return gcd(b, a % b);
+}
+
+int main() {
+    cout << gcd(36, 60) << endl;
+    return 0;
+}
+
+//Q19
+#include <iostream>
+using namespace std;
+
+int fact(int n) {
+    if (n <= 1) return 1;
+    return n * fact(n - 1);
+}
+
+int main() {
+    cout << fact(5) << endl;
+    return 0;
+}
+
+//Q20
+#include <iostream>
+using namespace std;
+
+int fib(int n) {
+    if (n <= 1) return n;
+    return fib(n - 1) + fib(n - 2);
+}
+
+int main() {
+    cout << fib(7) << endl;
+    return 0;
+}
+
+//Q21
+#include <iostream>
+#include <string>
+using namespace std;
+
+string reverseString(string str) {
+    if (str.length() == 0) return "";
+    return str.back() + reverseString(str.substr(0, str.length() - 1));
+}
+
+int main() {
+    cout << reverseString("hello") << endl;
+    return 0;
+}
+
+//Q22
+#include <iostream>
+using namespace std;
+
+int sumOfNaturalNumbers(int n) {
+    if (n == 0) return 0;
+    return n + sumOfNaturalNumbers(n - 1);
+}
+
+int main() {
+    cout << sumOfNaturalNumbers(5) << endl;
+    return 0;
+}
+
+//Q23
+#include <iostream>
+using namespace std;
+
+int power(int base, int exp) {
+    if (exp == 0) return 1;
+    return base * power(base, exp - 1);
+}
+
+int main() {
+    cout << power(2, 3) << endl;
+    return 0;
+}
+
+//Q24
+#include <iostream>
+using namespace std;
+
+void swapNumbers(int &a, int &b) {
+    int temp = a;
+    a = b;
+    b = temp;
+}
+
+int main() {
+    int x = 5, y = 10;
+    swapNumbers(x, y);
+    cout << x << " " << y << endl;
+    return 0;
+}
+
+//Q25
+#include <iostream>
+using namespace std;
+
+int sumArray(int arr[], int size) {
+    int sum = 0;
+    for (int i = 0; i < size; i++) {
+        sum += arr[i];
+    }
+    return sum;
+}
+
+int main() {
+    int arr[] = {1, 2, 3, 4, 5};
+    cout << sumArray(arr, 5) << endl;
+    return 0;
+}
+
+//Q26
+#include <iostream>
+using namespace std;
+
+int findMax(int arr[], int size) {
+    int max = arr[0];
+    for (int i = 1; i < size; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+    }
+    return max;
+}
+
+int main() {
+    int arr[] = {1, 2, 3, 4, 5};
+    cout << findMax(arr, 5) << endl;
+    return 0;
+}
+
+//Q27
+#include <iostream>
+using namespace std;
+
+int findSecondLargest(int arr[], int size) {
+    int max = arr[0], secondMax = arr[0];
+    for (int i = 1; i < size; i++) {
+        if (arr[i] > max) {
+            secondMax = max;
+            max = arr[i];
+        } else if (arr[i] > secondMax && arr[i] != max) {
+            secondMax = arr[i];
+        }
+    }
+    return secondMax;
+}
+
+int main() {
+    int arr[] = {1, 2, 3, 4, 5};
+    cout << findSecondLargest(arr, 5) << endl;
+    return 0;
+}
+
+//Q28
+#include <iostream>
+using namespace std;
+
+int* generateFibonacci(int n) {
+    int* fib = new int[n];
+    fib[0] = 0;
+    if (n > 1) fib[1] = 1;
+    for (int i = 2; i < n; i++) {
+        fib[i] = fib[i - 1] + fib[i - 2];
+    }
+    return fib;
+}
+
+int main() {
+    int n = 5;
+    int* fibArray = generateFibonacci(n);
+    for (int i = 0; i < n; i++) {
+        cout << fibArray[i] << " ";
+    }
+    delete[] fibArray;
+    return 0;
+}
+
+//Q29
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Student {
+    string name;
+    int marks;
+};
+
+void displayStudents(Student arr[], int size) {
+    for (int i = 0; i < size; i++) {
+        cout << "Name: " << arr[i].name << ", Marks: " << arr[i].marks << endl;
+    }
+}
+
+int main() {
+    Student students[] = {{"Shubh", 90}, {"Aman", 85}, {"Ravi", 88}};
+    displayStudents(students, 3);
+    return 0;
+}
+
+//Q30
+#include <iostream>
+using namespace std;
+
+void doubleArray(int (&arr)[6]) {
+    for (int i = 0; i < 6; i++) {
+        arr[i] *= 2;
+    }
+}
+
+int main() {
+    int arr[6] = {1, 2, 3, 4, 5, 6};
+    doubleArray(arr);
+    for (int i = 0; i < 6; i++) {
+        cout << arr[i] << " ";
+    }
+    return 0;
+}
